@@ -1,13 +1,14 @@
 <h1>This is <%= current_coordinator.email %>'s dashboard</h1>
 <h2>You are the Coordinator of these clubs</h2>
 <% @current_coordinator.clubs.each do |club| if @current_coordinator.clubs.any? %>
-<!-- .clubs returns collection of clubs associated with the current coordinator if any association exists -->
+<!-- .clubs returns collection of clubs associated with the current coordinator if any association exists. From, coordinators#dashboard -->
  <%= club.name %><br>
  <%= club.description %><hr>
  <% end %>
 <% end %>
 <h3>Recent Events...</h3>
- <% @events.each do |event| if @events.any? %>   <!-- Showing any events, if present -->
+ <% @current_coordinator.events.each do |event| if @current_coordinator.events.any? %>
+ <!-- Showing any events, if present. From, coordinators#dashboard -->
     <%= event.title %><br>
     <%= event.description %><br>
     <%= link_to 'Show', event_path(event) %>|
