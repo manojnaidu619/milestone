@@ -1,4 +1,7 @@
 class RegistrationsController < ApplicationController
+
+=begin
+
   def new
     @registration = Registration.new
   end
@@ -17,4 +20,7 @@ class RegistrationsController < ApplicationController
    def registrations_params
      params.require(:registration).permit(:name, :email, :section, :flag)
    end
+   
+=end
+
 end
