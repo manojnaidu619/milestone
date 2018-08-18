@@ -11,7 +11,8 @@
 
   <body>
     <% if coordinator_signed_in? %>
-       <%= link_to "Logout", destroy_coordinator_session_path, method: :delete, data: {confirm: "Are you sure?"} %>
+       <%= link_to "Logout", destroy_coordinator_session_path, method: :delete, data: {confirm: "Are you sure?"} %> |
+       <%= link_to "Profile", edit_coordinator_registration_path %>
     <% end %>
     <%= yield %>
   </body>

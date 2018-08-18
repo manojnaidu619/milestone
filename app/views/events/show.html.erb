@@ -1,3 +1,6 @@
 <h2><%= @event.title %></h2>
 <h3><%= @event.description %></h3>
+<% @event.image.each do |image| %>
+    <%= image_tag image %>                           <!-- Looping through the images, find in event.rb model file -->
+<% end %><br>
 <%= link_to "Home", dashboard_path %>

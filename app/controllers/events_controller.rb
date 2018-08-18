@@ -20,11 +20,12 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
+    @event.image.purge
     redirect_to dashboard_path
   end
   private
 
    def event_params
-     params.require(:event).permit(:title, :description)
+     params.require(:event).permit(:title, :description, image: [])
    end
 end
