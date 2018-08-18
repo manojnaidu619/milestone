@@ -11,8 +11,7 @@
  <!-- Showing any events, if present. From, coordinators#dashboard -->
     <%= event.title %><br>
     <%= event.description %><br>
-    <%= image_tag event.image.first if event.image.attached? %><br>                         <!-- Looping through the images, find in event.rb model file -->
-    <%= link_to 'Show', event_path(event) %>|
+    <%= link_to image_tag(event.image.first.variant(resize: '300x300').processed), event_path(event) if event.image.attached? %><br> <!-- Looping through the images, find in event.rb model file -->
     <%= link_to 'Destroy', event_path(event), method: :delete, data: {confirm: "Are you sure?"} %><br>
     <% end %><br>
  <% end %><br>
