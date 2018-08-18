@@ -1,4 +1,4 @@
-<h1>This is <%= current_coordinator.email %>'s dashboard</h1>
+<h1>Welcome <%= current_coordinator.email %></h1>
 <h2>You are the Coordinator of these clubs</h2>
 <% @current_coordinator.clubs.each do |club| if @current_coordinator.clubs.any? %>
 <!-- .clubs returns collection of clubs associated with the current coordinator if any association exists. From, coordinators#dashboard -->
@@ -11,7 +11,7 @@
  <!-- Showing any events, if present. From, coordinators#dashboard -->
     <%= event.title %><br>
     <%= event.description %><br>
-    <%= link_to image_tag(event.image.first.variant(resize: '300x300').processed), event_path(event) if event.image.attached? %><br> <!-- Looping through the images, find in event.rb model file -->
+    <%= link_to image_tag(event.image.first.variant(resize: '300x300').processed), event_path(event) if event.image.attached? %><br> <!-- Looping through the images if it is present and also resizing them. find in event.rb model file -->
     <%= link_to 'Destroy', event_path(event), method: :delete, data: {confirm: "Are you sure?"} %><br>
     <% end %><br>
  <% end %><br>
