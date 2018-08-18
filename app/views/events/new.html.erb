@@ -4,6 +4,6 @@
   <%= f.label :description %>
   <%= f.text_area :description %><br>
   <%= f.label :image %>
-  <%= f.file_field :image, multiple: true %><br>
+  <%= f.file_field :image, multiple: true, accept: "image/*" %><br>
   <%= f.submit %>
 <%  end %>
