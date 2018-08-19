@@ -3,4 +3,4 @@
 <% @event.image.each do |image| %>
     <%= link_to image_tag(image.variant(resize: '700x700').processed ), image %>                           <!-- Looping through the images, find in event.rb model file -->
 <% end %><br>
-<%= link_to "Home", dashboard_path %>
+<%= link_to "Home", root_path %>
