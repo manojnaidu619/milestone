@@ -1,0 +1,8 @@
+<%= form_for :profile do |f| %>
+ <%= f.file_field :avatar, accept: 'image/*' %><br>     <!-- validation of only all image types -->
+ <%= f.submit %>
+<% end %>
+<%= image_tag @current_profile.avatar.variant(resize: '200x200') if @current_profile %><br>   <!-- Now Fetching current loggedin coordinator and displaying his profile picture if he has created/edited one before -->
+<%= image_tag 'default_image.png', size: '200x200', alt: "Profile Image Not available" if !@current_profile %><br>   <!-- Setting a default image (in assets/images/) -->
+<%= link_to "Edit email & Password",  edit_coordinator_registration_path %><br>
+<%= link_to "home", dashboard_path %>
