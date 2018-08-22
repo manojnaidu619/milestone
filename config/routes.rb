@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config    # Admin feature by active_admin
-  ActiveAdmin.routes(self)
   devise_for :coordinators
   root 'home#index'                                   # Default Home page
   get 'dashboard', to: 'coordinators#dashboard'       # Homepage for logged in coordinator
