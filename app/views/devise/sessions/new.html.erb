@@ -1,6 +1,6 @@
   <div class="ui container">
+    <div class="ui form">
       <h2>Log in</h2>
-      <form class="ui form">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
             <%= f.label :email %><br />
@@ -23,7 +23,6 @@
             <%= f.submit "Log in", class: 'ui positive button' %>
           </div>
         <% end %><br>
-
         <%= render "devise/shared/links" %><br>
-       </form>
+    </div>
   </div>
