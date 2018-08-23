@@ -16,6 +16,6 @@ class ProfileController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:avatar, :id)      # Permitting avatar(actual picture) attribute
+    params.require(:profile).permit(:avatar)      # Permitting avatar(actual picture) attribute
   end
 end

@@ -1,3 +1,12 @@
+<div id="error messages">                                               <!-- Displaying error messages!! -->
+  <% if @profile.errors.any? %>
+   <% @profile.errors.full_messages do |msg| %>
+     <ul>
+       <li><%= msg %></li>
+     </ul>
+    <% end %>
+  <% end %>
+</div>
 <%= form_for :profile do |f| %>
  <%= f.file_field :avatar, accept: 'image/*' %><br>     <!-- validation of only all image types -->
  <%= f.submit %>

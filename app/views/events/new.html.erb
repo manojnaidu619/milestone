@@ -1,3 +1,13 @@
+<div id="error messages">                                               <!-- Displaying error messages!! -->
+  <% if @event.errors.any? %>
+   <%= @event.errors.full_messages do |key,val| %>
+     <ul>
+       <li><%= key %></li>
+       <li><%= val %></li>
+     </ul>
+    <% end %>
+  <% end %>
+</div>
 <%= form_for @event do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %><br>
