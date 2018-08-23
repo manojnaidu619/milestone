@@ -11,7 +11,7 @@
   <b><%= event.title %></b><br>
   <%= event.description %><br>
   <%= image_tag event.image.first.variant(resize: '300x300') %><br>           <!-- Showing first image of associated event -->
-  Submitted by: <%= event.coordinator.email %><br>
+  Submitted by: <%= event.coordinator.email %> | <%= image_tag event.coordinator.profile.avatar.variant(resize: '50x50') %><br>
   <%= link_to 'Show', event_path(event) %><br>
  <% end %><br>                                  <!-- 'end' for if-block  -->
 <% end %>
