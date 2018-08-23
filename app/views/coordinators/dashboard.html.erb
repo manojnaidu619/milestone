@@ -1,4 +1,4 @@
-<h1>Welcome <%= current_coordinator.email %></h1>
+<h1>Welcome <%= current_coordinator.email %></h1><%= image_tag current_coordinator.profile.avatar.variant(resize: '100x100').processed %>
 <h2>You are the Coordinator of these clubs</h2>
 <% @current_coordinator.clubs.each do |club| if @current_coordinator.clubs.any? %>
 <!-- .clubs returns collection of clubs associated with the current coordinator if any association exists. From, coordinators#dashboard -->
