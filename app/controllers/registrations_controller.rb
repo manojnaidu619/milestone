@@ -1,6 +1,6 @@
 class RegistrationsController < ApplicationController
 
-  before_action :authenticate_coordinator!
+  before_action :authenticate_coordinator!, except: [:new]
 
   def index
     @registrations = Registration.all
@@ -22,7 +22,11 @@ class RegistrationsController < ApplicationController
   end
 
   def new
-    @registration = Registration.new
+      #if Time.now > Time.parse('2018-08-25 01:24')
+          @registration = Registration.new
+      #else
+          redirect_to root_path
+      #end
   end
 
   def create
