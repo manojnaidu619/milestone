@@ -1,11 +1,18 @@
-<%= form_for @registration do |f| %>
-  <%= f.label :Name %>
-  <%= f.text_field :name %><br>
-  <%= f.label :email %>
-  <%= f.text_field :email %><br>
-  <%= f.label :Usn %>
-  <%= f.text_field :usn %><br>
-  <%= f.label :Section %>
-  <%= f.text_field :section %><br>
-  <%= f.submit %>
+<% if @registration.errors.any? %>                                 <!-- Displaying Error messages -->
+  <% @registration.errors.full_messages.each do |msg| %>
+    <ul>
+      <li><%= msg %></li>
+    </ul>
+  <% end %>
 <% end %>
+  <%= form_for @registration do |f| %>    <!-- @registration is in registrations controller -->
+    <%= f.label :Name %>
+    <%= f.text_field :name, autocomplete: 'off' %><br><br>
+    <%= f.label :email %>
+    <%= f.text_field :email, autocomplete: 'off' %><br><br>
+    <%= f.label :Usn %>
+    <%= f.text_field :usn, autocomplete: 'off' %><br><br>
+    <%= f.label :Section %>
+    <%= f.text_field :section, autocomplete: 'off' %><br><br>
+    <%= f.submit :Register%>
+  <% end %>

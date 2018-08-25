@@ -8,6 +8,7 @@ class ProfileController < ApplicationController
    @profile = current_coordinator.build_profile(profile_params)    # Associating new profile with coordinator_id in profiles table
     if @profile.save
       redirect_to dashboard_path
+      flash[:notice] = "Successfully Registered"
    else
       render 'index'
    end
