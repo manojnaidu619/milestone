@@ -33,6 +33,9 @@ gem 'mini_magick', '~> 4.8'
 
 gem 'activeadmin'
 
+gem 'prawn', '~>2.2.0'
+gem 'prawn-table'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
