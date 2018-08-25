@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :coordinators
   root 'home#index'                                   # Default Home page
+  get '/*', to: 'home#not_found'
   get 'dashboard', to: 'coordinators#dashboard'       # Homepage for logged in coordinator
   resources :coordinators, except: [:index]           # define Restful Routes for coordinators controller
   resources :events, except: [:index]                 # New event posting and display

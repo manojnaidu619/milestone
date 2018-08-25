@@ -7,4 +7,8 @@ class HomeController < ApplicationController
     end
   end
 
+  def not_found
+    
+  end
+
 end
