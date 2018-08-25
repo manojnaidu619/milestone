@@ -1,3 +1,3 @@
 # MileStone
 
-### College Event Management Site
+### College Event Management Site (Under development)
