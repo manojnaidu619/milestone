@@ -1,6 +1,17 @@
-<% @registrations.each do |reg| %>
- <%= reg.name %> &nbsp;
- <%= reg.email %> &nbsp;
- <%= reg.usn %> &nbsp;
- <%= reg.section %><br>
-<% end %>
+<table>
+  <tr style="font-size: 18px; font-weight: bold;">
+    <td>Name</td>
+    <td>email</td>
+    <td>USN</td>
+    <td>Section</td>
+  </tr>
+  <% @registrations.each do |reg| %>
+   <tr>
+     <td><%= reg.name %></td>
+     <td><%= reg.email %></td>
+     <td><%= reg.usn %></td>
+     <td><%= reg.section %></td>
+   </tr>
+  <% end %>
+</table><br>
+<%= link_to "Get PDF", registrations_path + '.pdf', format: 'pdf' %>   <!-- Link to get pdf -->

@@ -12,6 +12,8 @@ class RegistrationsController < ApplicationController
             data = [[reg.name, reg.email, reg.usn, reg.section]]         # Declaring the data to be displayed
             pdf.table(data, column_widths: [130, 130, 130, 130], header: true, :cell_style => { :size => 12.5 } )        # Creating the table with data
            end
+        pdf.move_down(10)
+        pdf.text 'Total registrations:' + Registration.count.to_s     # Display number of registrations
         send_data pdf.render, filename: "registrations.pdf", type: 'application/pdf', disposition: 'inline'
       end
     end
