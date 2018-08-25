@@ -25,7 +25,7 @@ class RegistrationsController < ApplicationController
       #if Time.now > Time.parse('2018-08-25 01:24')
           @registration = Registration.new
       #else
-          redirect_to root_path
+          #redirect_to root_path
       #end
   end
 
