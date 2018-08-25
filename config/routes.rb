@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :coordinators, except: [:index]           # define Restful Routes for coordinators controller
   resources :events, except: [:index]                 # New event posting and display
   resources :profile, only: [:index, :create]         # Setting Profile pictures and account edit
+  resources :registrations, only: [:new, :create]
 end
