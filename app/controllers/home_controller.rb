@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   end
 
   def not_found
-    
+   # For Wildcard Route
   end
 
 end
