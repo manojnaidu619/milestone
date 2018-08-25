@@ -1,5 +1,5 @@
 <div class="ui container">
-  <% if Registration.any? %>
+  <% if @registrations.any? %>
         <table>
           <tr style="font-size: 18px; font-weight: bold;">
             <td>Name</td>
@@ -19,6 +19,8 @@
         <%= link_to "Get PDF", registrations_path + '.pdf', format: 'pdf' %>   <!-- Link to get pdf -->
     <% else %>
            <h1>No Registrations yet!!</h1>
-  <% end %>
+  <% end %><br><br>
+
+  <%= link_to 'Back', root_path %>
 
 </div>

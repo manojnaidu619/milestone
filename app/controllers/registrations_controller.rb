@@ -1,5 +1,7 @@
 class RegistrationsController < ApplicationController
 
+  before_action :authenticate_coordinator!
+
   def index
     @registrations = Registration.all
     respond_to do |format|
