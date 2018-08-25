@@ -1,17 +1,24 @@
-<table>
-  <tr style="font-size: 18px; font-weight: bold;">
-    <td>Name</td>
-    <td>email</td>
-    <td>USN</td>
-    <td>Section</td>
-  </tr>
-  <% @registrations.each do |reg| %>
-   <tr>
-     <td><%= reg.name %></td>
-     <td><%= reg.email %></td>
-     <td><%= reg.usn %></td>
-     <td><%= reg.section %></td>
-   </tr>
+<div class="ui container">
+  <% if Registration.any? %>
+        <table>
+          <tr style="font-size: 18px; font-weight: bold;">
+            <td>Name</td>
+            <td>email</td>
+            <td>USN</td>
+            <td>Section</td>
+          </tr>
+          <% @registrations.each do |reg| %>
+           <tr>
+             <td><%= reg.name %></td>
+             <td><%= reg.email %></td>
+             <td><%= reg.usn %></td>
+             <td><%= reg.section %></td>
+           </tr>
+          <% end %>
+        </table><br><br>
+        <%= link_to "Get PDF", registrations_path + '.pdf', format: 'pdf' %>   <!-- Link to get pdf -->
+    <% else %>
+           <h1>No Registrations yet!!</h1>
   <% end %>
-</table><br>
-<%= link_to "Get PDF", registrations_path + '.pdf', format: 'pdf' %>   <!-- Link to get pdf -->
+
+</div>
