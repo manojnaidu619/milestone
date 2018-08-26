@@ -1,19 +1,20 @@
-  <div class="ui container log_in_form">
-    <div id="error messages">                                               <!-- Displaying error messages!! -->
-      <%- flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-      <%- end -%>
-    </div>
+<body id="sign_in_body">
+  <div class="ui container" id="form_align">   <!-- Stylesheets are in coordinators.scss -->
     <div class="ui form">
-      <h2>Log in</h2>
+      <h2  style="text-align:center;">Login</h2>
+        <div class="ui container" id="form_content">                                               <!-- Displaying error messages!! -->
+          <%- flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+          <%- end -%>
+        </div><br> 
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
-            <%= f.label :email %><br />
+            <%= f.label :email %>
             <%= f.email_field :email, autofocus: true, autocomplete: 'email' %>
           </div>
 
           <div class="field">
-            <%= f.label :password %><br />
+            <%= f.label :password %>
             <%= f.password_field :password, autocomplete: "off" %>
           </div>
 
@@ -25,9 +26,11 @@
           <% end -%>
 
           <div class="actions">
-            <%= f.submit "Log in", class: 'ui positive button' %>
+            <%= f.submit "Log in", class: 'ui positive button', id: "login_button" %>
           </div>
         <% end %><br>
         <%= render "devise/shared/links" %><br>
     </div>
   </div>
+
+</body>
