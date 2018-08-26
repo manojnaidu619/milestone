@@ -17,6 +17,15 @@
        <%= link_to "Logout", destroy_coordinator_session_path, method: :delete, data: {confirm: "Are you sure?"} %> |
        <%= link_to "Profile", profile_index_path %>
     <% end %>
+
+   <!-- Displaying Flash messages -->
+    <% if flash[:notice] %>
+      <div class="ui yellow message"><%= flash[:notice] %></div>
+    <% elsif flash[:error] %>
+       <div class="ui red message"><%= flash[:error] %></div>
+    <% elsif flash[:alert] %>
+    <div class="ui red message"><%= flash[:alert] %></div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

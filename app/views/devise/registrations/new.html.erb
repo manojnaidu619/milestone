@@ -2,12 +2,8 @@
   <div class="ui container" id="form_align">      <!-- Stylesheets are in coordinators.scss -->
       <div class="ui form">
         <center><h2>Sign up</h2></center><br>
-
-        <div class="ui container" id="form_content">
-            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= devise_error_messages! %>
-        </div><br>
-
+           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+           <%= devise_error_messages! %>
           <div class="field">
             <%= f.label :email %>
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -29,7 +25,7 @@
           <div class="actions">
             <%= f.submit 'Save', class: 'ui teal button' %>
           </div>
-        <% end %><br>
+          <% end %><br>
 
         <%= render "devise/shared/links" %>
 

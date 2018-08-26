@@ -2,11 +2,7 @@
   <div class="ui container" id="form_align">   <!-- Stylesheets are in coordinators.scss -->
     <div class="ui form">
       <h2  style="text-align:center;">Login</h2>
-        <div class="ui container" id="form_content">                                               <!-- Displaying error messages!! -->
-          <%- flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-          <%- end -%>
-        </div><br> 
+        
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
             <%= f.label :email %>
