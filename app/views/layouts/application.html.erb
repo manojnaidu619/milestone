@@ -13,10 +13,14 @@
   </head>
 
   <body>
-    <% if coordinator_signed_in? %>
-       <%= link_to "Logout", destroy_coordinator_session_path, method: :delete, data: {confirm: "Are you sure?"} %> |
-       <%= link_to "Profile", profile_index_path %>
-    <% end %>
+    <div class="ui container" style="height: 20px; width: 100%;">
+      <% if coordinator_signed_in? %>
+        <div style="float: right; margin-right: 20px; margin-top: 10px;">
+          <%= link_to "Profile", profile_index_path, class: "ui button" %>
+          <%= link_to "Logout", destroy_coordinator_session_path, method: :delete, data: {confirm: "Are you sure?"}, class: 'ui red button' %>
+        </div>
+      <% end %>
+    </div>
 
    <!-- Displaying Flash messages -->
    <div class="ui container" id="error_messages_display" style="margin-top: 20px; z-index: 99">
