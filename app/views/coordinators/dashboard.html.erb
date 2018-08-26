@@ -1,19 +1,42 @@
-<h1>Welcome <%= current_coordinator.email %></h1><%= image_tag current_coordinator.profile.avatar.variant(resize: '100x100') if current_coordinator.profile  %>
-<h2>You are the Coordinator of these clubs</h2>
+<!-- <h1>Welcome <%= current_coordinator.email %></h1><%= image_tag current_coordinator.profile.avatar.variant(resize: '100x100'), class: "ui medium circular image" if current_coordinator.profile %> -->
+
+<!-- Code for Clubs associated to coordinator -->
+
 <% @current_coordinator.clubs.each do |club| if @current_coordinator.clubs.any? %>
 <!-- .clubs returns collection of clubs associated with the current coordinator if any association exists. From, coordinators#dashboard -->
  <%= club.name %><br>
  <%= club.description %><hr>
  <% end %>
 <% end %>
-<h3>Recent Events...</h3>
- <% @current_coordinator.events.each do |event| if @current_coordinator.events.any? %>
- <!-- Showing any events, if present. From, coordinators#dashboard -->
-    <%= event.title %><br>
-    <%= event.description %><br>
-    <%= link_to image_tag(event.image.first.variant(resize: '300x300').processed), event_path(event) if event.image.attached? %><br> <!-- Looping through the images if it is present and also resizing them. find in event.rb model file -->
-    <%= link_to 'Destroy', event_path(event), method: :delete, data: {confirm: "Are you sure?"} %><br>
-    <% end %><br>
- <% end %><br>
-<%= link_to 'New event', new_event_path %><br><br>
-<%= link_to "View Registrations", registrations_path %><br>
+
+
+    <div class="ui container">
+        <div>
+            <%= link_to 'New event', new_event_path, class: 'ui positive button' %>
+            <%= link_to "View Registrations", registrations_path, class: 'ui default button' %>
+        </div>
+    </div><br>
+
+    <div class="ui container" style= "display: flex;">
+            <% @current_coordinator.events.each do |event| if @current_coordinator.events.any? %>
+            <!-- Showing any events, if present. From, coordinators#dashboard -->
+            <div class="ui card">
+              <div class="image">
+                  <%= link_to image_tag(event.image.first.variant(resize: '290x300!')), event_path(event) if event.image.attached? %> <!-- Looping through the images if it is present and also resizing them. find in event.rb model file -->
+              </div>
+              <div class="content">
+                <a class="header"><%= event.title %></a>
+                <div class="meta">
+                  <span class="date"><%= time_ago_in_words(event.created_at) %> ago</span>
+                </div>
+                <div class="description">
+                  <%= truncate(event.description, length: 50) %>
+                </div>
+              </div>
+              <div class="extra content">
+                  <%= link_to 'Destroy', event_path(event), method: :delete, data: {confirm: "Are you sure?"} %>
+              </div>
+              <% end %>
+             <% end %>
+            </div>
+    </div>
