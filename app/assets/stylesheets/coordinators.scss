@@ -5,7 +5,7 @@
 #form_align{
   background-color: white;
   width: 600px;
-  transform: translateY(100px);
+  transform: translateY(85px);
   border: 1px solid #ddd;
   padding: 10px;
   border-radius: 8px;
@@ -22,4 +22,9 @@
 
 #sign_in_body{
    background-color: #f7f7f7;
+}
+
+.close{
+  float: right;
+  cursor: pointer;
 }

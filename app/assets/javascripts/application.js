@@ -16,3 +16,9 @@
 //= require jquery
 //= require semantic-ui
 //= require_tree .
+
+$(document).ready(function() {
+  $('.close').click(function() {
+    $('#error_messages_display').fadeOut(375);
+  })
+})

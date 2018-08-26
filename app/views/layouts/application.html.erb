@@ -19,13 +19,16 @@
     <% end %>
 
    <!-- Displaying Flash messages -->
-    <% if flash[:notice] %>
-      <div class="ui yellow message"><%= flash[:notice] %></div>
-    <% elsif flash[:error] %>
-       <div class="ui red message"><%= flash[:error] %></div>
-    <% elsif flash[:alert] %>
-    <div class="ui red message"><%= flash[:alert] %></div>
-    <% end %>
+   <div class="ui container" id="error_messages_display" style="margin-top: 20px; z-index: 2">
+     <% if flash[:notice] %>
+       <div class="ui teal message"><span class="close">X</span><%= flash[:notice] %></div>
+     <% elsif flash[:error] %>
+        <div class="ui red message"><span class="close">X</span><%= flash[:error] %></div>
+     <% elsif flash[:alert] %>
+     <div class="ui red message"><span class="close">X</span><%= flash[:alert] %></div>
+     <% end %>
+   </div>
+
     <%= yield %>
   </body>
 </html>
