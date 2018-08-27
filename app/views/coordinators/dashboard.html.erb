@@ -17,8 +17,8 @@
         </div>
     </div><br>
 
-    <div class="ui container" style= "display: flex;">
-            <% @current_coordinator.events.each do |event| if @current_coordinator.events.any? %>
+    <div class="ui container">
+        <% @current_coordinator.events.each do |event| if @current_coordinator.events.any? %>
             <!-- Showing any events, if present. From, coordinators#dashboard -->
             <div class="ui card">
               <div class="image">
