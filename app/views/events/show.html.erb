@@ -1,7 +1,16 @@
-<h2><%= @event.title %></h2>
-<h3><%= @event.description %></h3>
-<p>by: <%= @event.coordinator.email %> | <%= image_tag @event.coordinator.profile.avatar.variant(resize: '50x50') %></p>
-<% @event.image.each do |image| %>
-    <%= link_to image_tag(image.variant(resize: '700x700').processed ), image %>                           <!-- Looping through the images, find in event.rb model file -->
-<% end %><br>
-<%= link_to "Home", root_path %>
+<body style="background-color: #FFF5E5">
+  <center><div class="ui container" style="background-color: white; margin-top: 50px;">
+    <div class="ui container" style="width:700px; height: 500px;">
+      <div class="ui fluid image">
+        <% @event.image.each do |image| %>
+            <%= link_to image_tag(image.variant(resize: '500x500')), image %>                           <!-- Looping through the images, find in event.rb model file -->
+        <% end %>
+    </div>
+    </div>
+    <h2><%= @event.title %></h2>
+    <h3><%= @event.description %></h3>
+    <p>by: <%= @event.coordinator.email %> <%= image_tag @event.coordinator.profile.avatar.variant(resize: '100x100'), class: 'ui avatar image' %></p>
+    <br>
+    <%= link_to "Home", root_path %>
+  </div></center>
+</body>
