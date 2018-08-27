@@ -17,26 +17,26 @@
         </div>
     </div><br>
 
-    <div class="ui container">
-        <% @current_coordinator.events.each do |event| if @current_coordinator.events.any? %>
-            <!-- Showing any events, if present. From, coordinators#dashboard -->
-            <div class="ui card">
-              <div class="image">
-                  <%= link_to image_tag(event.image.first.variant(resize: '290x300!')), event_path(event) if event.image.attached? %> <!-- Looping through the images if it is present and also resizing them. find in event.rb model file -->
-              </div>
-              <div class="content">
-                <a class="header"><%= event.title %></a>
-                <div class="meta">
-                  <span class="date"><%= time_ago_in_words(event.created_at) %> ago</span>
-                </div>
-                <div class="description">
-                  <%= truncate(event.description, length: 50) %>
-                </div>
-              </div>
-              <div class="extra content">
-                  <%= link_to 'Destroy', event_path(event), method: :delete, data: {confirm: "Are you sure?"} %>
-              </div>
-              <% end %>
-             <% end %>
+<div class="ui container" style="display: flex;flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: flex-start">
+      <% @current_coordinator.events.each do |event| if @current_coordinator.events.any? %>
+              <!-- Showing any events, if present. From, coordinators#dashboard -->
+          <div class="ui card" style="margin: 15px;">
+            <div class="image">
+                <%= link_to image_tag(event.image.first.variant(resize: '290x300!')), event_path(event) if event.image.attached? %> <!-- Looping through the images if it is present and also resizing them. find in event.rb model file -->
             </div>
-    </div>
+            <div class="content">
+              <a class="header"><%= event.title %></a>
+              <div class="meta">
+                <span class="date"><%= time_ago_in_words(event.created_at) %> ago</span>
+              </div>
+              <div class="description">
+                <%= truncate(event.description, length: 50) %>
+              </div>
+            </div>
+            <div class="extra content" id="destroy_link_on_card">
+                <%= link_to 'Destroy', event_path(event), method: :delete, data: {confirm: "Are you sure?"} %>
+            </div>
+          </div>
+          <% end %>
+         <% end %>
+</div>
