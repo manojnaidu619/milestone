@@ -2,6 +2,8 @@
 
 <!-- Code for Clubs associated to coordinator -->
 
+<% cache do %>             <!-- Enabled Page caching -->    
+
 <% @current_coordinator.clubs.each do |club| if @current_coordinator.clubs.any? %>
 <!-- .clubs returns collection of clubs associated with the current coordinator if any association exists. From, coordinators#dashboard -->
  <%= club.name %><br>
@@ -40,3 +42,5 @@
           <% end %>
          <% end %>
 </div>
+
+<% end %>
