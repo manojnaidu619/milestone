@@ -1,6 +1,6 @@
 <body style="background-color: #FFF5E5">
   <center><div class="ui container" style="background-color: white; margin-top: 50px;">
-    <div class="ui container" style="width:700px; height: 500px;">
+    <div class="ui container">
       <div class="ui fluid image">
         <% @event.image.each do |image| %>
             <%= link_to image_tag(image.variant(resize: '500x500')), image %>                           <!-- Looping through the images, find in event.rb model file -->
