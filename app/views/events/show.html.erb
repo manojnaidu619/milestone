@@ -1,16 +1,26 @@
+<% cache do %>                                        <!-- Enabled Page caching -->
+
 <body style="background-color: #FFF5E5">
-  <center><div class="ui container" style="background-color: white; margin-top: 50px;">
+  <center><div class="ui container" style="background-color: white; margin-top: 50px; width:60%; border-radius: 15px;">
     <div class="ui container">
-      <div class="ui fluid image">
-        <% @event.image.each do |image| %>
-            <%= link_to image_tag(image.variant(resize: '500x500')), image %>                           <!-- Looping through the images, find in event.rb model file -->
-        <% end %>
+
+      <div class="ui image" style="padding:20px; display: flex; flex-direction: row; flex-flow: row wrap; justify-content: flex-start;">
+          <% @event.image.each do |image|%>
+              <%= link_to image_tag(image.variant(resize: '300x300')), image %>                           <!-- Looping through the images, find in event.rb model file -->
+          <% end %>
     </div>
-    </div>
-    <h2><%= @event.title %></h2>
-    <h3><%= @event.description %></h3>
-    <p>by: <%= @event.coordinator.email %> <%= image_tag @event.coordinator.profile.avatar.variant(resize: '100x100'), class: 'ui avatar image' %></p>
-    <br>
-    <%= link_to "Home", root_path %>
+
+  </div><br>
+
+      <div class="content">
+        <h2><%= @event.title %></h2>
+        <h3><%= @event.description %></h3>
+        <p>by: <%= @event.coordinator.email %> <%= image_tag @event.coordinator.profile.avatar.variant(resize: '100x100'), class: 'ui avatar image' if @event.coordinator.profile %></p>
+        <br>
+        <%= link_to "Home", root_path , class: "ui orange basic button"%>
+      </div><br>
+
   </div></center>
 </body>
+
+<% end %>
