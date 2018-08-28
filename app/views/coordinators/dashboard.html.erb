@@ -19,12 +19,12 @@
         </div>
     </div><br>
 
-<div class="ui container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start;">
+<div class="ui container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
       <% @current_coordinator.events.each do |event| if @current_coordinator.events.any? %>
               <!-- Showing any events, if present. From, coordinators#dashboard -->
           <div class="ui card" style="margin: 20px;">
             <div class="image" >
-                <%= link_to image_tag(event.image.first.variant(resize: '290x300')), event_path(event) if event.image.attached? %> <!-- Looping through the images if it is present and also resizing them. find in event.rb model file -->
+                <%= link_to image_tag(event.image.first.variant(resize: '290x300').processed), event_path(event) if event.image.attached? %> <!-- Looping through the images if it is present and also resizing them. find in event.rb model file -->
             </div>
             <div class="content">
               <a class="header"><%= event.title %></a>
