@@ -32,8 +32,6 @@ gem 'semantic-ui-sass'
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
 
-gem 'activeadmin'
-
 gem 'prawn', '~>2.2.0'
 gem 'prawn-table'
 
