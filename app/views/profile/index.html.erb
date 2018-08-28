@@ -1,17 +1,25 @@
-<div id="error messages">                                               <!-- Displaying error messages!! -->
-  <% if @profile.errors.any? %>
-   <% @profile.errors.full_messages do |msg| %>
-     <ul>
-       <li><%= msg %></li>
-     </ul>
-    <% end %>
-  <% end %>
-</div>
-<%= form_for :profile do |f| %>
- <%= f.file_field :avatar, accept: 'image/*' %><br>     <!-- validation of only all image types -->
- <%= f.submit %>
-<% end %>
-<%= image_tag @current_profile.avatar.variant(resize: '200x200') if @current_profile %><br>   <!-- Now Fetching current loggedin coordinator and displaying his profile picture if he has created/edited one before -->
-<%= image_tag 'default_image.png', size: '200x200', alt: "Profile Image Not available" if !@current_profile %><br>   <!-- Setting a default image (in assets/images/) -->
-<%= link_to "Edit email & Password",  edit_coordinator_registration_path %><br>
-<%= link_to "home", dashboard_path %>
+<body id="sign_in_body">
+  <div class="ui container" style="width:25%; border: 1px solid #ddd; padding: 20px; border-radius: 20px; background-color: white;">
+    <div id="error messages">                                               <!-- Displaying error messages!! -->
+      <% if @profile.errors.any? %>
+       <% @profile.errors.full_messages do |msg| %>
+         <ul>
+           <li><%= msg %></li>
+         </ul>
+        <% end %>
+      <% end %>
+    </div>
+      <div id="images" align='center'>
+        <%= image_tag @current_profile.avatar.variant(resize: '200x200') if @current_profile %><br>   <!-- Now Fetching current loggedin coordinator and displaying his profile picture if he has created/edited one before -->
+        <%= image_tag 'default_image.png', size: '200x200', alt: "Profile Image Not available" if !@current_profile %><br>   <!-- Setting a default image (in assets/images/) -->
+      </div>
+      <br>
+      <div class="ui form">
+        <%= form_for :profile do |f| %>
+         <%= f.file_field :avatar, accept: 'image/*' %><br><br>    <!-- validation of only all image types -->
+         <center><%= link_to "Edit email & Password",  edit_coordinator_registration_path, class: 'ui orange basic button' %></center><br>
+         <center><%= f.submit class:'ui positive button'%></center>
+        <% end %><br>
+      </div>
+  </div>
+</body>
