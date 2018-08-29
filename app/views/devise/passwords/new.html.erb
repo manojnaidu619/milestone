@@ -1,7 +1,6 @@
-<center><div id="form_content" style="width: 800px">            <!-- Devise Error Messages display -->
+
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-        </div></center>
+  <div style="color: #F00000" ><%= devise_error_messages! %></div>                  <!-- Devise Error Messages display -->
 <br>
 <br>
 <div class="ui container" style="width: 500px">
