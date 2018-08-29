@@ -14,7 +14,7 @@
 
     <div class="ui container">
         <div>
-            <%= link_to 'New event', new_event_path, class: 'ui positive button' %>
+            <%= link_to "New Event", new_event_path, class: 'ui positive button' %>
             <%= link_to "View Registrations", registrations_path, class: 'ui default button' %>
         </div>
     </div><br>
@@ -36,7 +36,7 @@
               </div>
             </div>
             <div class="extra content" id="destroy_link_on_card">
-                <%= link_to 'Destroy', event_path(event), method: :delete, data: {confirm: "Are you sure?"} %>
+                <%= link_to 'Destroy Event', event_path(event), method: :delete, data: {confirm: "Are you sure?"}, class: 'ui basic red button' %>
             </div>
           </div>
           <% end %>

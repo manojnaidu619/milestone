@@ -1,6 +1,6 @@
 <body id="sign_in_body">
-  <div class="ui container" style="width:25%; margin-top: 40px; border: 1px solid #ddd; padding: 20px; border-radius: 20px; background-color: white;">
-    <center><h2>Choose Profile Picture</h2></center><br>
+  <div class="ui segment container" style="width:40%; margin-top: 40px; border: 1px solid #ddd; padding: 20px; border-radius: 20px; background-color: white;">
+    <center><h2><i class="edit outline icon"></i>Choose Profile Picture</h2></center><br>
     <div id="error messages">                                               <!-- Displaying error messages!! -->
       <% if @profile.errors.any? %>
        <% @profile.errors.full_messages do |msg| %>
