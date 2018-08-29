@@ -32,7 +32,7 @@
                 <span class="date"><%= time_ago_in_words(event.created_at) %> ago</span>
               </div>
               <div class="description">
-                <%= truncate(event.description, length: 50) %>
+                <%= truncate(event.description, length: 35) %>
               </div>
             </div>
             <div class="extra content" id="destroy_link_on_card">
