@@ -1,4 +1,4 @@
-<div class="ui container" id="landing_page_image">
+<div class="ui container" id="landing_page_image" style="background-color: red;">
   <div>
     <%= link_to 'Coordinators Login', new_coordinator_session_path, class: 'large right floated positive ui button', style:'margin: 40px' %>
   </div>
@@ -6,9 +6,11 @@
     <h1>Lorem Ipsum</h1>
     <%= link_to "New Registration", new_registration_path %>
   </div>
-
 </div>
-<div class="ui container"  >
+
+ <!-- Displaying Cards -->
+
+<div class="ui container" style="background-color: red; width: 95%;" >
   <% @events.each do |event| if @events.present? %>            <!-- @events from home#index route -->
     <b><%= event.title %></b><br>
     <%= event.description %><br>
