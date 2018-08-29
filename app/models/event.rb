@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
   has_many_attached :image                    # Event has many images
   belongs_to :coordinator                    # Each event belongs to a coordinator
-  validates_presence_of :title
-  validates_presence_of :description
+  validates :title, presence: true, length: { minimum: 15 }
+  validates :description, presence:true, length: { minimum: 30 }
 
 end
