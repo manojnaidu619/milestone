@@ -1,6 +1,6 @@
 class RegistrationsController < ApplicationController
 
-  before_action :authenticate_coordinator!, except: [:new]
+  before_action :authenticate_coordinator!, except: [:new, :create]
 
   def index
     @registrations = Registration.all
