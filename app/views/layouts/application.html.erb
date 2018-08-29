@@ -25,11 +25,11 @@
    <!-- Displaying Flash messages -->
    <div class="ui container" id="error_messages_display" style="margin-top: 20px; z-index: 99">
      <% if flash[:notice] %>
-       <div class="ui success message"><span class="close">X</span><%= flash[:notice] %></div>
+       <div class="ui success message"><span class="close">x</span><%= flash[:notice] %></div>
      <% elsif flash[:error] %>
-        <div class="ui red message"><span class="close">X</span><%= flash[:error] %></div>
+        <div class="ui red message"><span class="close">x</span><%= flash[:error] %></div>
      <% elsif flash[:alert] %>
-     <div class="ui negative message"><span class="close">X</span><%= flash[:alert] %></div>
+     <div class="ui negative message"><span class="close">x</span><%= flash[:alert] %></div>
      <% end %>
    </div>
 
