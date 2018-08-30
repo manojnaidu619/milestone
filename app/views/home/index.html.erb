@@ -13,7 +13,7 @@
 <div class="ui container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; width: 100%;" >
     <% @events.each do |event| if @events.present? %>            <!-- @events from home#index route -->
     <div class="ui card" style="margin: 30px; max-width: 250px; max-height: 550px;">
-      <div class="image">
+      <div class="image" style="align-self: center;" >
       <%= image_tag event.image.first.variant(resize: '250x250') %>    <!-- Showing first image of associated event -->
       </div>
         <div class="content">
@@ -25,6 +25,7 @@
             </div>
           </div>
           <div class="extra content">
+            <br/>
             <a><%= link_to 'Show', event_path(event), class: ' user icon ui basic green button' %></a>
           </div>
         </div>
