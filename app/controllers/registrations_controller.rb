@@ -32,6 +32,7 @@ class RegistrationsController < ApplicationController
   def create
     @registration = Registration.new(reg_params)
      if @registration.save
+       flash[:notice] = "Registration Successful"
        redirect_to root_path
      else
        render 'new'
