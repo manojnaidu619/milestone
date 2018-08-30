@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     @event = current_coordinator.events.build(event_params)
      if @event.save
        redirect_to dashboard_path
-       flash.now[:alert] = 'Event saved!'
+       flash[:notice] = 'Event saved!'
      else
        render 'new'
      end

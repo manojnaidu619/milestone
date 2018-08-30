@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @events = Event.all
+    @events = Event.all.order(created_at: :desc)
     if coordinator_signed_in?
       redirect_to dashboard_path
     end

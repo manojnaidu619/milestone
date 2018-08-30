@@ -20,8 +20,8 @@
     </div><br>
 
 <div class="ui container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center;">
-      <% @current_coordinator.events.each do |event| if @current_coordinator.events.any? %>
-              <!-- Showing any events, if present. From, coordinators#dashboard -->
+      <% @current_coordinator.events.all.order(created_at: :desc).each do |event| if @current_coordinator.events.any? %>
+              <!-- Showing all events ordering by created Time, if present. From, coordinators#dashboard -->
           <div class="ui card" id="cards" style="margin: 30px; max-width: 350px; max-height: 550px; min-width: 290px; min-height: 300px;">
             <div class="image" style="align-self:center;" >
                 <%= link_to image_tag(event.image.first.variant(resize: '290x290')), event_path(event) if event.image.attached? %> <!-- Looping through the images if it is present and also resizing them. find in event.rb model file -->
