@@ -31,6 +31,10 @@
     <p style="text-align: center;">by: <%= @event.coordinator.email %> <%= image_tag @event.coordinator.profile.avatar.variant(resize: '100x100'), class: 'ui avatar image' if @event.coordinator.profile %></p>
     <br>
     <%= link_to "Home", root_path , class: "ui orange basic button", style: "margin: auto;" %>
+    <% if coordinator_signed_in? %>
+    <%= link_to "Edit", edit_event_path(@event), class: 'ui basic blue button' %>
+    <%= link_to "Delete", event_path(@event), method: :delete, data: {confirm: 'Are you sure?'}, class: 'ui red button' %>
+    <% end %>
   </div><br>
 
 </body>
