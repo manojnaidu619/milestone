@@ -19,9 +19,7 @@
         <div class="content">
          <a class="header"><%= truncate(event.title, length: 27) %></a>
           <div class="meta">
-            <div class="description">
-            <%= truncate(event.description, length: 25) %>
-          </div><br>
+          <br>
           <div><%= link_to 'Show', event_path(event), class: 'ui fluid basic green button' %></div>
         </div><br>
           <div class="extra content">
