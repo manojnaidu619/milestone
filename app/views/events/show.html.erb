@@ -4,23 +4,23 @@
 
   <!-- Displaying the title of the Event -->
 
-  <div class="ui segment" style="height: auto; width: auto; margin: auto; overflow: auto;">
+  <div class="ui raised segment" style="height: auto; width: auto; margin: auto; overflow: auto;">
     <h2 style="text-align:center"><%= @event.title %></h2>
   </div>
 
   <!-- If image is present then show the image! -->
 
   <% if @event.image.attached? %>
-  <center><div class="ui container" style="background-color: white; margin-top: 50px; width:20%; border-radius: 15px;">
+  <center><div class="ui container" style="display: flex; flex-direction: row; background-color: white; margin-top: 50px; width:20%; border-radius: 15px;">
     <div class="ui container">
       <div class="ui image" style="padding:20px; align-items: center; margin-top: 20px;">
           <% @event.image.each do |image|%>
-              <%= link_to image_tag(image.variant(resize: '300x300')), image %><br>                        <!-- Looping through the images, find in event.rb model file -->
+              <%= link_to image_tag(image.variant(resize: '500x500')), image %><br>                        <!-- Looping through the images, find in event.rb model file -->
           <% end %>
       </div>
-
   </div>
 </div>
+  </center>
  <% end %>    <!-- End of if block -->
 
   <!-- Displaying the Markdown description -->
@@ -33,7 +33,6 @@
     <%= link_to "Home", root_path , class: "ui orange basic button", style: "margin: auto;" %>
   </div><br>
 
-  </center>
 </body>
 
 <% end %>
