@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
 
+  before_action :authenticate_coordinator!, except: [:show]
+
   def new
     @event = Event.new
   end
