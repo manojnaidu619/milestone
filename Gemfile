@@ -34,7 +34,7 @@ gem 'mini_magick', '~> 4.8'
 
 gem 'prawn', '~>2.2.0'
 gem 'prawn-table'
-
+gem 'redcarpet'                                                     # For Markdown purpose
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
