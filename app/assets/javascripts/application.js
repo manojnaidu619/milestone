@@ -17,9 +17,10 @@
 //= require semantic-ui
 //= require_tree .
 
-$(document).on('turbolinks:load',function() {          // On turbolinks load, perform all the functions 
+$(document).on('turbolinks:load',function() {          // On turbolinks load, perform all the functions
   $('.close').click(function() {
     $('#error_messages_display').fadeOut(375);
   });
-  var simplemde = new SimpleMDE({ element: $("#description_box")[0] });
+  var simplemde = new SimpleMDE({ element: $("#description_box")[0] });   // For Markdown(simplemde)
+  simplemde.value("NOTE : This is a markdown Editor..");
 });

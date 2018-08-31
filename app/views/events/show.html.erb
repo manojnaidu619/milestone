@@ -25,7 +25,7 @@
 
   <!-- Displaying the Markdown description -->
 
-  <div class="ui segment container" style="width: 70%; margin-top: 20px; background-color: white; border-radius: 15px; padding: 30px; text-align: left">
+  <div class="ui segment container" style="width: 70%; margin-top: 20px; background-color: white; border-radius: 15px; padding: 30px; text-align: left;">
     <h4><%= markdown(@event.description) %></h4>    <!-- done using 'redcarpet' gem, find it in app/helpers/events_helper.rb -->
     <!-- redcarpet usage: https://codepen.io/asommer70/post/markdown-in-rails-yes-please -->
     <p style="text-align: center;">by: <%= @event.coordinator.email %> <%= image_tag @event.coordinator.profile.avatar.variant(resize: '100x100'), class: 'ui avatar image' if @event.coordinator.profile %></p>
