@@ -1,0 +1,31 @@
+<body style="background-color: #F0F0F0">
+  <div class="ui segment container" style="width:60%; border: 1px solid #ddd; padding: 20px; border-radius: 10px; margin-top: 35px; background-color: white;">
+    <br/><center><h2>Create a New Event</h2></center><br>
+     <div id="form_content">
+      <% if @event.errors.any? %>                                  <!-- Displaying error messages!! -->
+          <div id="error_explanation">
+            <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+                <ul>
+                <% @event.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+                </ul>
+          </div>
+    <% end %>
+    </div><br>
+
+    <div class="ui form">
+      <%= form_for @event do |f| %>
+        <%= f.label :title %>
+        <%= f.text_field :title %><br><br>
+        <%= f.label :description %>
+        <%= f.text_area :description, rows: 25, columns: 75, id: 'description_box' %><br><br>
+        <%= f.label :images %><br>
+        <%= f.file_field :image, multiple: true, accept: "image/*" %><br><br>    <!-- validation of only all image types -->
+        <%= f.submit class:'ui orange button' %>
+      <% end %>
+    </div><br>
+    <%= link_to "Cancel", root_path, class:'ui default button' %>
+
+  </div>
+</body>

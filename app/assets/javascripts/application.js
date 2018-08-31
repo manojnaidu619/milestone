@@ -22,5 +22,4 @@ $(document).on('turbolinks:load',function() {          // On turbolinks load, pe
     $('#error_messages_display').fadeOut(375);
   });
   var simplemde = new SimpleMDE({ element: $("#description_box")[0] });   // For Markdown(simplemde)
-  simplemde.value("NOTE : This is a markdown Editor..");
 });
