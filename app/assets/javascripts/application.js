@@ -17,8 +17,9 @@
 //= require semantic-ui
 //= require_tree .
 
-$(document).ready(function() {
+$(document).on('turbolinks:load',function() {
   $('.close').click(function() {
     $('#error_messages_display').fadeOut(375);
-  })
-})
+  });
+  var simplemde = new SimpleMDE({ element: $("#description_box")[0] });
+});
