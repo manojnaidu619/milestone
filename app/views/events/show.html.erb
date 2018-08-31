@@ -1,6 +1,7 @@
 <% cache do %>                                        <!-- Enabled Page caching -->
 
 <body style="background-color: #FFF5E5">
+  <% if @event.image.attached? %>     <!-- If image is present then show the image! -->
   <center><div class="ui container" style="background-color: white; margin-top: 50px; width:20%; border-radius: 15px;">
     <div class="ui container">
 
@@ -12,10 +13,11 @@
 
   </div>
 </div>
+ <% end %>    <!-- End of if block -->
 
-      <div class="ui container" style="width: 50%; margin-top: 20px; background-color: white; border-radius: 15px; padding: 30px;">
+      <div class="ui container" style="width: 50%; margin-top: 20px; background-color: white; border-radius: 15px; padding: 30px; text-align: left">
         <h2><%= @event.title %></h2>
-        <h3><%= @event.description %></h3>
+        <h4><%= @event.description %></h4>
         <p>by: <%= @event.coordinator.email %> <%= image_tag @event.coordinator.profile.avatar.variant(resize: '100x100'), class: 'ui avatar image' if @event.coordinator.profile %></p>
         <br>
         <%= link_to "Home", root_path , class: "ui orange basic button"%>
