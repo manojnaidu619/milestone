@@ -1,10 +1,18 @@
 <% cache do %>                                        <!-- Enabled Page caching -->
 
 <body style="background-color: #FFF5E5">
-  <% if @event.image.attached? %>     <!-- If image is present then show the image! -->
+
+  <!-- Displaying the title of the Event -->
+
+  <div class="ui segment" style="height: auto; width: auto; margin: auto; overflow: auto;">
+    <h2 style="text-align:center"><%= @event.title %></h2>
+  </div>
+
+  <!-- If image is present then show the image! -->
+
+  <% if @event.image.attached? %>
   <center><div class="ui container" style="background-color: white; margin-top: 50px; width:20%; border-radius: 15px;">
     <div class="ui container">
-
       <div class="ui image" style="padding:20px; align-items: center; margin-top: 20px;">
           <% @event.image.each do |image|%>
               <%= link_to image_tag(image.variant(resize: '300x300')), image %><br>                        <!-- Looping through the images, find in event.rb model file -->
@@ -15,13 +23,15 @@
 </div>
  <% end %>    <!-- End of if block -->
 
-      <div class="ui container" style="width: 50%; margin-top: 20px; background-color: white; border-radius: 15px; padding: 30px; text-align: left">
-        <h2><%= @event.title %></h2>
-        <h4><%= markdown(@event.description) %></h4>
-        <p>by: <%= @event.coordinator.email %> <%= image_tag @event.coordinator.profile.avatar.variant(resize: '100x100'), class: 'ui avatar image' if @event.coordinator.profile %></p>
-        <br>
-        <%= link_to "Home", root_path , class: "ui orange basic button"%>
-      </div><br>
+  <!-- Displaying the Markdown description -->
+
+  <div class="ui segment container" style="width: 70%; margin-top: 20px; background-color: white; border-radius: 15px; padding: 30px; text-align: left">
+    <h4><%= markdown(@event.description) %></h4>    <!-- done using 'redcarpet' gem, find it in app/helpers/events_helper.rb -->
+    <!-- redcarpet usage: https://codepen.io/asommer70/post/markdown-in-rails-yes-please -->
+    <p style="text-align: center;">by: <%= @event.coordinator.email %> <%= image_tag @event.coordinator.profile.avatar.variant(resize: '100x100'), class: 'ui avatar image' if @event.coordinator.profile %></p>
+    <br>
+    <%= link_to "Home", root_path , class: "ui orange basic button", style: "margin: auto;" %>
+  </div><br>
 
   </center>
 </body>
