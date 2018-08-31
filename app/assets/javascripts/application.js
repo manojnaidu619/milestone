@@ -17,7 +17,7 @@
 //= require semantic-ui
 //= require_tree .
 
-$(document).on('turbolinks:load',function() {
+$(document).on('turbolinks:load',function() {          // On turbolinks load, perform all the functions 
   $('.close').click(function() {
     $('#error_messages_display').fadeOut(375);
   });
