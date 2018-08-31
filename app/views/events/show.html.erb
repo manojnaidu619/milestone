@@ -4,7 +4,7 @@
   <center><div class="ui container" style="background-color: white; margin-top: 50px; width:60%; border-radius: 15px;">
     <div class="ui container">
 
-      <div class="ui image" style="padding:20px; align-items: center; border: 1px solid orange; border-style: dashed; margin-top: 20px;">
+      <div class="ui image" style="padding:20px; align-items: center; margin-top: 20px;">
           <% @event.image.each do |image|%>
               <%= link_to image_tag(image.variant(resize: '300x300')), image %><br>                        <!-- Looping through the images, find in event.rb model file -->
           <% end %>
