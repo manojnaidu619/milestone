@@ -1,13 +1,16 @@
-<% cache do %>                                                <!-- Russian doll caching -->
-<div class="ui fluid container" style="background-color: red;" >
-  <div>
-    <%= link_to 'Coordinators Login', new_coordinator_session_path, class: 'large right floated positive ui button', style:'margin: 40px' %>
+<% cache do %>                                                   <!-- Russian doll caching -->
+
+<header>
+  <div class="ui container" style="background-color: #ddd; height: 100vh; width: auto; margin:0; padding: 0;" >
+      <div>
+        <%= link_to 'Coordinators Login', new_coordinator_session_path, class: 'large right floated positive ui button', style:'margin: 40px' %>
+      </div>
+      <div class="center_text" >
+        <h1>Lorem Ipsum</h1>
+        <%= link_to "New Registration", new_registration_path %>
+      </div>
   </div>
-  <div class="center_text" >
-    <h1>Lorem Ipsum</h1>
-    <%= link_to "New Registration", new_registration_path %>
-  </div>
-</div>
+</header>
 
  <!-- Displaying Cards -->
 
