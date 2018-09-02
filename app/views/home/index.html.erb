@@ -1,3 +1,4 @@
+<% cache do %>                                                <!-- Russian doll caching -->
 <div class="ui container" id="landing_page_image">
   <div>
     <%= link_to 'Coordinators Login', new_coordinator_session_path, class: 'large right floated positive ui button', style:'margin: 40px' %>
@@ -14,7 +15,7 @@
     <% @events.each do |event| if @events.present? %>            <!-- @events from home#index route -->
     <div class="ui card" style="margin: 30px; max-width: 250px; max-height: 500px; min-width: 250px; min-height: 330px;">
       <div class="image" style="align-self: center;" >
-      <%= image_tag event.image.first.variant(resize: '250x250') if event.image.attached? %>    <!-- Showing first image of associated event -->
+      <%= image_tag event.image.first.variant(resize: '250x250>') if event.image.attached? %>    <!-- Showing first image of associated event -->
       </div>
         <div class="content">
          <a class="header"><%= truncate(event.title, length: 27) %></a>
@@ -31,3 +32,5 @@
     <% end %>
 
 </div>
+
+<% end %>        <!-- Caching end block -->
