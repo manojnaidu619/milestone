@@ -19,7 +19,7 @@
 
 $(document).on('turbolinks:load',function() {          // On turbolinks load, perform all the functions
   $('.close').click(function() {
-    $('#error_messages_display').fadeOut(375);
+    $('#error_messages_display').fadeOut(375);        // For closing the Error message popup
   });
   var simplemde = new SimpleMDE({ element: $("#description_box")[0] });   // For Markdown(simplemde)
 });

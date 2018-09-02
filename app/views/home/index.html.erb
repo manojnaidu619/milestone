@@ -1,5 +1,5 @@
 <% cache do %>                                                <!-- Russian doll caching -->
-<div class="ui container" id="landing_page_image">
+<div class="ui fluid container" style="background-color: red;" >
   <div>
     <%= link_to 'Coordinators Login', new_coordinator_session_path, class: 'large right floated positive ui button', style:'margin: 40px' %>
   </div>
@@ -11,7 +11,7 @@
 
  <!-- Displaying Cards -->
 
-<div class="ui container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; width: 100%;" >
+<div class="ui container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; width: 100%; margin: 0" >
     <% @events.each do |event| if @events.present? %>            <!-- @events from home#index route -->
     <div class="ui card" style="margin: 30px; max-width: 250px; max-height: 500px; min-width: 250px; min-height: 330px;">
       <div class="image" style="align-self: center;" >
