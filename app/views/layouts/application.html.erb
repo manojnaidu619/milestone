@@ -15,9 +15,11 @@
   </head>
 
   <body>
-    <div class="ui container" style="width: 100%;">
+    <div class="ui container" style="margin-top: 20px;">
       <% if coordinator_signed_in? %>
-        <div style="float: right; margin-right: 20px; margin-top: 10px;">
+        <div>
+          <%= link_to "New Event", new_event_path, class: 'ui positive button' %>
+          <%= link_to "Listing", registrations_path, class: 'ui blue button' %>
           <%= link_to "Profile", profile_index_path, class: "ui button" %>
           <%= link_to "Logout", destroy_coordinator_session_path, method: :delete, data: {confirm: "Are you sure?"}, class: 'ui red button' %>
         </div>
@@ -25,7 +27,7 @@
     </div>
 
    <!-- Displaying Flash messages -->
-   <div class="ui container" id="error_messages_display" style="position: absolute; width: 100%; height: auto; text-align: center; z-index: 2">
+   <div class="ui container" id="error_messages_display" style="position: absolute; width: 100%; height: auto; text-align: center; z-index: 2; opacity: 0.8">
      <!-- 'position: absolute' is for z-index -->
      <% if flash[:notice] %>
        <div class="ui success message"><span class="close">x</span><%= flash[:notice] %></div>
