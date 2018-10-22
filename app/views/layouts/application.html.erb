@@ -18,6 +18,7 @@
     <div class="ui container" style="margin-top: 20px;">
       <% if coordinator_signed_in? %>
         <div>
+          <%= link_to "Home", root_path, class: "ui basic orange button" %>
           <%= link_to "New Event", new_event_path, class: 'ui positive button' %>
           <%= link_to "Listing", registrations_path, class: 'ui blue button' %>
           <%= link_to "Profile", profile_index_path, class: "ui button" %>
