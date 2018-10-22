@@ -6,4 +6,9 @@ class Event < ApplicationRecord
 
   extend FriendlyId                      # For friendly-id
   friendly_id :title, use: [:slugged]
+
+  def should_generate_new_friendly_id?
+  title_changed?                           # Create new slug if the title gets updated
+  end
+
 end
