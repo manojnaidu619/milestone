@@ -28,6 +28,7 @@ gem "autoprefixer-rails"
 # gem 'bcrypt', '~> 3.1.7'
 gem 'semantic-ui-sass'
 
+gem 'friendly_id', '~> 5.2.0'   # For using slugged url
 # Use ActiveStorage variant
 
 gem 'prawn', '~>2.2.0'
