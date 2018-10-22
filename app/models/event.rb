@@ -4,4 +4,6 @@ class Event < ApplicationRecord
   validates :title, presence: true, length: { minimum: 15, maximum: 45 }
   validates :description, presence:true, length: { minimum: 30 }
 
+  extend FriendlyId                      # For friendly-id
+  friendly_id :title, use: [:slugged]
 end

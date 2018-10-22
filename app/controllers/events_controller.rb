@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-
   before_action :authenticate_coordinator!, except: [:show]
 
   def new
@@ -17,11 +16,11 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])         # As per friendly_id slug
   end
 
   def update
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])         # As per friendly_id slug
      if @event.update(event_params)
        redirect_to event_path(@event)
        flash[:success] = "Event Edit successfull!!"
@@ -31,11 +30,11 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])         # As per friendly_id slug
   end
 
   def destroy
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])         # As per friendly_id slug
     @event.destroy
     @event.image.purge
     redirect_to dashboard_path
@@ -45,4 +44,5 @@ class EventsController < ApplicationController
    def event_params
      params.require(:event).permit(:title, :description, image: [])
    end
+
 end
