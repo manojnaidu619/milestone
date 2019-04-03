@@ -5,7 +5,7 @@ class Event < ApplicationRecord
   validates :description, presence:true, length: { minimum: 30 }
 
   extend FriendlyId                      # For friendly-id
-  friendly_id :title, use: [:slugged, :history]
+  friendly_id :title, use: [:slugged]
 
   def should_generate_new_friendly_id?     # Method given by friendly_id
   title_changed?                           # Create new slug if the title gets updated

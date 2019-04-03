@@ -31,9 +31,6 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.friendly.find(params[:id])         # As per friendly_id slug
-    if request.path != event_path(@event)
-      return redirect_to @event, :status => :moved_permanently
-    end
   end
 
   def destroy
