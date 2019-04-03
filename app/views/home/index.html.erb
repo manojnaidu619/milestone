@@ -1,16 +1,13 @@
 <% cache do %>                                                   <!-- Russian doll caching -->
 
-<header>
   <div id="landing_page" >
       <div>
         <%= link_to 'Coordinators Login', new_coordinator_session_path, class: 'large right floated positive ui button', style:'margin: 40px' %>
       </div>
       <div class="center_text" >
-        <h1>Lorem Ipsum</h1>
-        <%= link_to "New Registration", new_registration_path %>
+        <%= link_to "New Registration", root_path  %>  <!-- new_registration_path -->
       </div>
   </div>
-</header>
 
  <!-- Displaying Cards -->
 

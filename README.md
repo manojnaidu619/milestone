@@ -1,3 +1,3 @@
 # MileStone
 
-### College Event Management Site (Under development)
+#### [Hop in!](https://milestone619.herokuapp.com/)
