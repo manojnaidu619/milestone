@@ -10,7 +10,7 @@
           </div>
 
           <div class="field">
-            <%= f.label :password %> 
+            <%= f.label :password %>
             <%= f.password_field :password, autocomplete: "off" %>
           </div>
 
@@ -25,7 +25,8 @@
             <%= f.submit "Log in", class: 'ui positive button', id: "login_button" %>
           </div>
         <% end %><br>
-        <%= render "devise/shared/links" %><br>
+        <%= link_to "Sign up", new_coordinator_registration_path %>
+        <%#= render "devise/shared/links" %><br>                       <!-- Holds FORGOT PASSWORD link -->
     </div>
   </div>
 

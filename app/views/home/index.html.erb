@@ -1,11 +1,11 @@
   <div id="landing_page" style='margin-top:-20px;'>
-    <div style="position: absolute; z-index: 2; width: 100%; height: 50px;">
-      <div style='margin:50px; margin-left: 70%; resize:both;'>
-        <%= link_to 'Coordinators Login', new_coordinator_session_path, class: 'large positive ui button' %>
-        <%= link_to "New Registration", new_registration_path, class: 'large orange ui button' %>  <!-- new_registration_path -->
+    <div style="position: absolute; z-index: 2; width: 100%;">
+      <div id="home_links">
+        <%= link_to 'Login', new_coordinator_session_path, class: 'large positive ui button', id:'b1' %>
+        <%= link_to "Entries", new_registration_path, class: 'large orange ui button', id:'b2' %>  <!-- new_registration_path -->
       </div>
       <div class="head1" style='resize:both;'>
-        <h1 style="color:w#fd1d1d; margin-left: 38%; margin-top: 8%">Event Management Site</h1>
+        <h1 id="event_header" style="color:w#fd1d1d;">Event Management Site</h1>
       </div>
     </div>
 

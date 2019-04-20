@@ -19,3 +19,57 @@
 body,html{
   height: 100%;
 }
+
+/*@media screen and (max-width: 320px){
+  #event_header{
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 720px){
+  #event_header{
+    font-size: 25px;
+    text-align: center;
+  }
+}
+*/
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-width: 480px) {
+  #event_header{
+    font-size: 27px;
+    margin-top: 15%;
+    text-align: center;
+    color:red;
+  }
+  #home_links{
+    margin-top: 2%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  #event_header{
+    margin-top: 10%;
+    font-size: 30px;
+    text-align: center;
+    color: green;
+  }
+ }
+ #home_links{
+   margin-top: 2%;
+   margin-left: 70%;
+ }
+
+@media (min-width: 1200px) {
+  #event_header{
+    margin-top: 8%;
+    font-size: 35px;
+    text-align: center;
+    color: blue;
+  }
+  #home_links{
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 80%;
+  }
+}
