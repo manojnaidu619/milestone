@@ -28,7 +28,7 @@
     </div>
 
    <!-- Displaying Flash messages -->
-   <div class="ui container" id="error_messages_display" style="position: absolute; width: 100%; height: auto; text-align: center; z-index: 2; opacity: 0.8">
+   <div class="ui container" id="error_messages_display" style="position: absolute; width: 100%; height: auto; text-align: center; z-index: 2; opacity: 0.6">
      <!-- 'position: absolute' is for z-index -->
      <% if flash[:notice] %>
        <div class="ui success message"><span class="close">x</span><%= flash[:notice] %></div>
