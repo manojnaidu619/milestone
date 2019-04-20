@@ -1,20 +1,29 @@
-<h1>New Event Registration</h1>
-<% if @registration.errors.any? %>                                 <!-- Displaying Error messages -->
-  <% @registration.errors.full_messages.each do |msg| %>
-    <ul>
-      <li><%= msg %></li>
-    </ul>
+<body style='background-color: #F8FFEC'>
+<div class="ui container" style="width:650px;">
+  <center><h1>New Event Registration</h1></center><br>
+  <% if @registration.errors.any? %>                                 <!-- Displaying Error messages -->
+    <% @registration.errors.full_messages.each do |msg| %>
+      <ul>
+        <li><%= msg %></li>
+      </ul>
+    <% end %>
   <% end %>
-<% end %>
-  <%= form_for @registration do |f| %>    <!-- @registration is in registrations controller -->
-    <%= f.label :Name %>
-    <%= f.text_field :name, autocomplete: 'off' %><br><br>
-    <%= f.label :email %>
-    <%= f.text_field :email, autocomplete: 'off' %><br><br>
-    <%= f.label :Usn %>
-    <%= f.text_field :usn, autocomplete: 'off' %><br><br>
-    <%= f.label :Section %>
-    <%= f.text_field :section, autocomplete: 'off' %><br><br>
-    <%= f.submit :Register%>
-  <% end %><br><br>
- <%= link_to "Back", root_path %>
+  <div class="ui container" style='border:1px solid #EDEDED; border-radius:15px; background-color: white;'>
+    <div class="ui form" style="padding:25px;">
+      <%= form_for @registration do |f| %>    <!-- @registration is in registrations controller -->
+        <b><%= f.label :Name %></b> <i class="user outline icon"></i>
+        <%= f.text_field :name, autocomplete: 'off' %><br><br>
+        <b><%= f.label :email %></b> <i class="envelope outline icon"></i>
+        <%= f.text_field :email, autocomplete: 'off' %><br><br>
+        <b><%= f.label :Usn, 'USN' %></b>
+        <%= f.text_field :usn, autocomplete: 'off' %><br><br>
+        <b><%= f.label :Section %></b>
+        <%= f.text_field :section, autocomplete: 'off' %><br><br>
+        <center><%= f.submit :Register, class:'ui teal button'%></center>
+      <% end %>
+    </div>
+  </div>
+  <br>
+<center><%= link_to "Cancel", root_path %></center>
+</div>
+</body>
