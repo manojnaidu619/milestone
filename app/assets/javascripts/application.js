@@ -23,10 +23,3 @@ $(document).on('turbolinks:load',function() {          // On turbolinks load, pe
   });
   var simplemde = new SimpleMDE({ element: $("#description_box")[0] });   // For Markdown(simplemde)
 });
-
-$(document).ready(function(){
-  if ($(window).width() < 750) {
-   $("#b1").removeClass("large positive ui button").addClass( "fas fa-key" );
-   $("#b2").removeClass("large orange ui button").addClass( "fas fa-pencil-alt" );
-  }
-});
