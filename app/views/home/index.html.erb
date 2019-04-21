@@ -1,8 +1,8 @@
   <div id="landing_page" style='margin-top:-20px;'>
     <div style="position: absolute; z-index: 2; width: 100%;">
       <div id="home_links" style="display:flex; justify-content:center; margin-right: 25px;">
+        <%= link_to "Registrations", new_registration_path, class: 'ui inverted purple button' %>  <!-- new_registration_path -->
         <%= link_to 'Login', new_coordinator_session_path, class: 'ui inverted purple button' %>
-        <%= link_to "Entries", new_registration_path, class: 'ui inverted purple button' %>  <!-- new_registration_path -->
       </div>
       <div class="head1" style='resize:both;'>
         <h1 id="event_header" style="color:w#fd1d1d; text-align:center; margin-top: 100px; font-family: 'Montserrat', sans-serif;">Event Management Site</h1>
