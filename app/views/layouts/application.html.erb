@@ -17,20 +17,20 @@
   </head>
 
   <body>
-    <div class="ui container" style="margin-top: 20px;">
+    <div class="ui container" style="margin: 15px; display:flex; text-align:center; justify-content: center;">
       <% if coordinator_signed_in? %>
         <div>
-          <%= link_to "Home", root_path, class: "ui basic orange button" %>
-          <%= link_to "New Event", new_event_path, class: 'ui positive button' %>
-          <%= link_to "Listing", registrations_path, class: 'ui blue button' %>
-          <%= link_to "Profile", profile_index_path, class: "ui button" %>
-          <%= link_to "Logout", destroy_coordinator_session_path, method: :delete, data: {confirm: "Are you sure?"}, class: 'ui red button' %>
+          <%= link_to "Home", root_path, class: "ui inverted green button" %>
+          <%= link_to "New Event", new_event_path, class: 'ui inverted purple button' %>
+          <%= link_to "Listing", registrations_path, class: 'ui inverted purple button' %>
+          <%= link_to "Profile", profile_index_path, class: "ui inverted purple button" %>
+          <%= link_to "Logout", destroy_coordinator_session_path, method: :delete, data: {confirm: "Are you sure?"}, class: 'ui inverted red button' %>
         </div>
       <% end %>
     </div>
 
    <!-- Displaying Flash messages -->
-   <div class="ui container" id="error_messages_display" style="position: absolute; width: 100%; height: auto; text-align: center; z-index: 2; opacity: 0.6">
+   <div class="ui container" id="error_messages_display" style="position: absolute; width: 100%; height: auto; text-align: center; z-index: 3; opacity: 1; font-weight: bolder;">
      <!-- 'position: absolute' is for z-index -->
      <% if flash[:notice] %>
        <div class="ui success message"><span class="close">x</span><%= flash[:notice] %></div>

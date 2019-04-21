@@ -25,9 +25,9 @@
                 <%= truncate(event.description, length: 35) %>
               </div>
             </div>
-            <div id="destroy_link_on_card">
-                <%= link_to "Show", event_path(event), class: 'ui basic green button' %>   <!-- Show button -->
-                <%= link_to 'Edit', edit_event_path(event), class: 'ui basic blue button' %>
+            <div id="destroy_link_on_card" style="display:flex; justify-content:center;">
+                <%= link_to "Show", event_path(event), class: 'ui teal button' %>   <!-- Show button -->
+                <%= link_to 'Edit', edit_event_path(event), class: 'ui teal button' %>
                 <%= link_to 'Destroy Event', event_path(event), method: :delete, data: {confirm: "Are you sure?"}, class: 'ui basic red button' %>
             </div><br>
           </div>

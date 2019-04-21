@@ -28,10 +28,9 @@
     <!-- redcarpet usage: https://codepen.io/asommer70/post/markdown-in-rails-yes-please -->
     <p style="text-align: center;">by: <%= @event.coordinator.email %> <%= image_tag @event.coordinator.profile.avatar.variant(resize: '100x100'), class: 'ui avatar image' if @event.coordinator.profile %></p>
     <br>
-    <%= link_to "Home", root_path , class: "ui orange basic button", style: "margin: auto;" %>
     <% if coordinator_signed_in? %>
-    <%= link_to "Edit", edit_event_path(@event), class: 'ui basic blue button' %>
-    <%= link_to "Destroy Event", event_path(@event), method: :delete, data: {confirm: 'Are you sure?'}, class: 'ui red button' %>
+    <%= link_to "Edit", edit_event_path(@event), class: 'ui inverted teal button' %>
+    <%= link_to "Destroy Event", event_path(@event), method: :delete, data: {confirm: 'Are you sure?'}, class: 'ui inverted red button' %>
     <% end %>
   </div><br>
 
