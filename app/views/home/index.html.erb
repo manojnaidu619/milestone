@@ -20,7 +20,7 @@
       <%= image_tag event.image.first.variant(resize: '250x250>') if event.image.attached? %>    <!-- Showing first image of associated event -->
       </div>
         <div class="content">
-         <a class="header"><%= truncate(event.title, length: 27) %></a>
+         <a class="header"><%= truncate(event.title, length: 24) %></a>
           <div class="meta">
           <br>
           <div><%= link_to 'Show', event_path(event), class: 'ui fluid basic green button' %></div>
