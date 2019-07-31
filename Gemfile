@@ -32,7 +32,6 @@ gem 'semantic-ui-sass'
 
 gem 'friendly_id', '~> 5.2.0'   # For using slugged url
 # Use ActiveStorage variant
-
 gem 'prawn', '~>2.2.0'
 gem 'prawn-table'
 gem 'redcarpet'                                                     # For Markdown purpose
@@ -62,7 +61,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'sqlite3'
-  gem 'mini_magick', '~> 4.8'
+  #gem 'mini_magick', '~> 4.8'
 end
 
 group :test do
